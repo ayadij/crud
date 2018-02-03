@@ -1,0 +1,16 @@
+<h1>Index</h1>
+
+
+<% @posts.each do |post| %>
+  <%= post.title %><br>
+  <%= post.body %>
+  <%= post.date %>
+  <%= post.published %><br>
+  <%= link_to 'Show', post %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <br><br>
+<% end %>
+
+<br>
+  <%= link_to 'Create New Post', new_post_path %>
